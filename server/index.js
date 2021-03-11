@@ -1,9 +1,9 @@
 import path from 'path';
 import { dirname } from 'dirname-filename-esm';
-import knex from 'knex';
+import { knex } from 'knex'
 
 /**
- * @type {knex}
+ * @type {Knex}
  */
 const database = knex({
     client: 'pg',
@@ -20,7 +20,6 @@ const database = knex({
         disableTransactions: true,
     },
 });
-
 database.migrate.latest();
 
 export default database;
